@@ -1,0 +1,13 @@
+{{ template "header" . }}
+<h1>アカウント削除手続き</h1>
+{{ if .Error }}
+<p><font color="#FF0000">{{ .Error }}</font></p>
+{{ end }}
+
+<form action="/user/delete" method="POST">
+    <label>ユーザ名: </label><input type="text" name="username" value="{{ .Username }}" required><br>
+    <label>パスワード: </label><input type="password" name="password" required></br>
+    <input type="submit" value="削除">
+</form>
+<a href="/"><button type="button">戻る</button></a>
+{{ template "footer" }}

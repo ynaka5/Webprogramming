@@ -1,0 +1,12 @@
+{{ template "header" . }}
+<h1>ユーザ登録</h1>
+{{ if .Error }}
+<p><font color="#FF0000">{{ .Error }}</font><p>
+{{ end }}
+<form action="/user/new" method="POST">
+    <p>ユーザ名 <br><input type="text" name="username" value="{{ .Username }}"required></p>
+    <p>パスワード <br><input type="text" name="password" value="{{ .Password }}" required></p>
+    <p>パスワード（確認） <br><input type="text" name="re_password" value="{{ .Re_password }}" required></p>>
+    <input type="submit" value="登録">
+</form>
+{{ template "footer" }}
